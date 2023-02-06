@@ -1,0 +1,230 @@
+:root {
+    --text-color: #fff;
+    --general-font: 'Montserrat', sans-serif;
+    --general-font-size: 1.2rem;
+}
+
+/*******************************************************/
+/******************** G E N E R A L ********************/
+/*******************************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*******************************************************/
+/***************** B A C K G R O U N D *****************/
+/*******************************************************/
+body {
+    font-family: var(--general-font);
+    font-size: var(--general-font-size);
+    color: var(--text-color);
+    
+    background: #222;
+    background: url('https://source.unsplash.com/1600x900/?landscape?hd') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* contains the search bar and the weather display */
+.container {
+    height: 60%;
+    width: 30%;
+}
+
+
+/*******************************************************/
+/********************** S E A R C H  *******************/
+/*******************************************************/
+/* search container */
+/* contains the text input and the search button */
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+/* search input */
+input.search-bar {
+    border: none;
+    outline: none;
+    padding: 0.4em 0.8em;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    font-family: inherit;
+    font-size: 105%;
+    width: 100%;
+    height: 100%;
+}
+
+input.search-bar::placeholder {
+    color: gray;
+} 
+
+/* search button */
+button {
+    border: none;
+    height: 100%;
+    width: 55px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: grey;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+
+/*******************************************************/
+/************ W E A T H E R  D I S P L A Y  ************/
+/*******************************************************/
+/* black container which displays all the weather info*/
+.card {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 75%, rgba(0, 0, 0, 0));
+    height: 100%;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 2em;
+}  
+
+/* T E X T  S T Y L I N G */
+.city {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.35rem;
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* weather description displayed under the city name*/
+.description {
+    text-transform: capitalize;
+    text-align: center;
+}
+
+/* container that displays the degrees in numbers and the (ºC) string */
+.temperature {
+    font-family: 'Fjalla One', sans-serif;
+    letter-spacing: 0.35rem;
+    height: 150px;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* displays the degrees */
+.temp {
+    font-size: 6.5rem;
+    font-weight: 800;
+    width: 80%;
+    display: flex;
+    justify-content: end;
+    align-content: center;
+}
+
+.deg {
+    min-width: fit-content;
+    display: flex;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+
+    position: relative;
+    left: 10%;
+    top: -5%;
+}
+
+
+.icon-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+
+    position: relative;
+    right: 18%;
+    top: 25%;
+}
+
+/* displays the celcius (ºC) string*/
+.metric {
+    margin-top: 1.5rem;
+    margin-left: 0.5rem;
+    align-self: self-start;
+}
+
+
+.icon {
+    filter: drop-shadow(-22px -6px 11px #000000);
+}
+
+/* other weather info displayed under the temperature and icon */
+.bottom {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.left {
+    width: 50%;
+    margin-right: 1rem;
+    text-align: right;
+}
+
+.right {
+    width: 50%;
+    margin-left: 1rem;
+}
+
+
+/*******************************************************/
+/************ R E S P O N S I V E N E S S **************/
+/*******************************************************/
+/* P H O N E S */
+@media (max-width: 480px) {
+    .container {
+        width: 85%;
+    }
+
+    body {
+        align-items: flex-start;
+        margin-top: 7%;
+        overflow: hidden;
+    }
+}
+
+/* T A B L E T S */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        width: 70%;
+    }
+}
+
+/* O T H E R  S M A L L  S C R E E N S */
+@media (min-width: 769px) and (max-width: 1500px) {
+    .container {
+        width: 40%;
+    }
+}
