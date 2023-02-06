@@ -217,6 +217,12 @@ button:hover {
     }
 }
 
+@media (hover: none) {
+    .detection:before {
+      content: 'NO';
+    }
+}
+
 /* T A B L E T S */
 @media (min-width: 481px) and (max-width: 768px) {
     .container {
